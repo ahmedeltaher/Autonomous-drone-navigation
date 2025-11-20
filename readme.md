@@ -3,7 +3,6 @@
 [![ROS2](https://img.shields.io/badge/ROS2-Humble-blue.svg)](https://docs.ros.org/en/humble/)
 [![PX4](https://img.shields.io/badge/PX4-v1.14-green.svg)](https://px4.io/)
 [![Python](https://img.shields.io/badge/Python-3.8+-yellow.svg)](https://www.python.org/)
-[![Difficulty](https://img.shields.io/badge/Difficulty-High-red.svg)]()
 
 **Autonomous drone navigation using optical flow, IMU, and lidar when GPS is unavailable.**
 
