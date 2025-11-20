@@ -1,0 +1,39 @@
+# Optical Flow Integration Parameters
+# Configuration for Feature 1.1.1 - Optical Flow Integration
+
+optical_flow_node:
+  ros__parameters:
+    # Update rate
+    update_rate: 20.0  # Hz
+    
+    # Sensor specifications
+    # PMW3901: focal_length_px = 16.0, sensor_size_m = 0.0001
+    # PX4FLOW: focal_length_px varies, sensor_size_m = 0.000006
+    focal_length_px: 16.0
+    sensor_size_m: 0.0001
+    
+    # Height constraints
+    min_height: 0.1   # meters - below this, optical flow is unreliable
+    max_height: 5.0   # meters - above this, optical flow quality degrades
+    
+    # Velocity estimation
+    velocity_covariance: 0.1  # m/s - standard deviation of velocity estimate
+    use_gyro_compensation: true  # Compensate for rotational motion
+    
+    # Output options
+    publish_odometry: true  # Publish full odometry (position + velocity)
+
+optical_flow_simulator:
+  ros__parameters:
+    # Simulation parameters
+    publish_rate: 20.0  # Hz
+    focal_length_px: 16.0
+    sensor_size_m: 0.0001
+    
+    # Simulated environment
+    simulated_height: 1.5  # meters - constant height for simulation
+    
+    # Noise models
+    height_noise_std: 0.02   # meters - range sensor noise
+    flow_noise_std: 0.01     # rad/s - optical flow noise
+    quality_threshold: 200   # 0-255 - simulated quality value

@@ -1,0 +1,25 @@
+# Position Hold Parameters
+# Epic 3: Autonomous Navigation Stack
+
+position_hold_node:
+  ros__parameters:
+    # PID gains for XY position
+    kp_xy: 1.0         # Proportional gain
+    ki_xy: 0.1         # Integral gain
+    kd_xy: 0.5         # Derivative gain
+    
+    # PID gains for Z position (altitude)
+    kp_z: 1.5          # Proportional gain
+    ki_z: 0.2          # Integral gain
+    kd_z: 0.8          # Derivative gain
+    
+    # Velocity limits
+    max_velocity_xy: 2.0   # m/s horizontal
+    max_velocity_z: 1.0    # m/s vertical
+    
+    # Safety limits
+    max_tilt_angle: 0.5    # rad (~30 deg)
+    
+    # Control settings
+    control_rate: 50.0     # Hz
+    hover_throttle: 0.5    # Baseline throttle (0-1)

@@ -1,0 +1,26 @@
+# 2D Lidar SLAM Parameters
+# Configuration for Feature 1.1.3 - 2D Lidar SLAM
+
+scan_matcher_node:
+  ros__parameters:
+    # Map configuration
+    map_resolution: 0.05  # meters per pixel (5cm)
+    map_size_x: 100.0     # meters
+    map_size_y: 100.0     # meters
+    
+    # Scan matching
+    scan_matching_rate: 5.0  # Hz
+    min_scan_range: 0.1      # meters
+    max_scan_range: 30.0     # meters
+    
+    # Sensor fusion
+    use_imu: true   # Use IMU for rotation
+    use_odom: true  # Use odometry for initial guess
+
+map_saver_node:
+  ros__parameters:
+    map_filename: 'indoor_map'
+
+localization_node:
+  ros__parameters:
+    num_particles: 500  # Particle filter particles

@@ -1,0 +1,18 @@
+# Pure Pursuit Trajectory Tracker Parameters
+# Epic 3: Autonomous Navigation Stack
+
+pure_pursuit_node:
+  ros__parameters:
+    # Lookahead distance
+    lookahead_distance: 1.0    # meters (base)
+    lookahead_gain: 0.5        # velocity-dependent scaling
+    min_lookahead: 0.5         # meters (minimum)
+    max_lookahead: 3.0         # meters (maximum)
+    
+    # Velocity settings
+    linear_velocity: 0.5       # m/s (target speed)
+    max_angular_velocity: 1.0  # rad/s
+    
+    # Tolerances
+    goal_tolerance: 0.2        # meters (goal reached)
+    path_tolerance: 0.5        # meters (max deviation)

@@ -1,0 +1,41 @@
+# Example Indoor Waypoint Mission
+# Feature 1.1.14: Waypoint Navigation
+
+mission_name: "Example Indoor Mission"
+description: "Sample waypoint mission for indoor navigation"
+
+waypoints:
+  - x: 0.0
+    y: 0.0
+    z: 0.0
+    name: "Start Point"
+  
+  - x: 2.0
+    y: 0.0
+    z: 0.0
+    name: "Hallway 1"
+  
+  - x: 2.0
+    y: 3.0
+    z: 0.0
+    name: "Turn Point"
+  
+  - x: 5.0
+    y: 3.0
+    z: 0.0
+    name: "Room A"
+  
+  - x: 5.0
+    y: 6.0
+    z: 0.0
+    name: "Room B"
+  
+  - x: 0.0
+    y: 6.0
+    z: 0.0
+    name: "Hallway 2"
+  
+  - x: 0.0
+    y: 0.0
+    z: 0.0
+    name: "Return to Start"

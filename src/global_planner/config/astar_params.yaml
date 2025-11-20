@@ -1,0 +1,17 @@
+# A* Global Path Planner Parameters
+# Epic 3: Autonomous Navigation Stack
+
+astar_planner_node:
+  ros__parameters:
+    # Movement options
+    allow_diagonal: true      # Allow diagonal movement
+    
+    # Movement costs
+    cost_diagonal: 1.414      # sqrt(2)
+    cost_straight: 1.0        # Straight movement cost
+    
+    # Obstacle detection
+    occupied_threshold: 50    # 0-100, cells above this are obstacles
+    
+    # Path optimization
+    path_smoothing: true      # Remove unnecessary waypoints

@@ -1,0 +1,30 @@
+# Dynamic Window Approach Parameters
+# Epic 3: Autonomous Navigation Stack
+
+dwa_planner_node:
+  ros__parameters:
+    # Velocity limits
+    max_speed: 0.5          # m/s
+    min_speed: -0.1         # m/s (reverse)
+    max_yaw_rate: 1.0       # rad/s
+    
+    # Acceleration limits
+    max_accel: 0.2          # m/s^2
+    max_dyaw_rate: 1.0      # rad/s^2
+    
+    # Sampling resolution
+    v_resolution: 0.05      # m/s
+    yaw_rate_resolution: 0.1  # rad/s
+    
+    # Prediction
+    predict_time: 2.0       # seconds
+    dt: 0.1                 # seconds
+    
+    # Scoring weights
+    heading_weight: 1.0     # Goal alignment
+    clearance_weight: 0.5   # Obstacle distance
+    velocity_weight: 0.3    # Forward speed
+    
+    # Safety
+    robot_radius: 0.3       # meters
+    obstacle_margin: 0.2    # meters

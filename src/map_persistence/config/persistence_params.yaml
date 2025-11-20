@@ -1,0 +1,8 @@
+# Map Persistence Parameters
+# Feature 1.1.9
+
+map_manager_node:
+  ros__parameters:
+    map_directory: 'maps'      # Directory to save/load maps
+    auto_save: true            # Enable automatic saving
+    save_interval: 60.0        # Seconds between auto-saves

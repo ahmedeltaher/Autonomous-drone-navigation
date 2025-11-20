@@ -1,0 +1,20 @@
+# Vision Pose Estimator Parameters
+# Epic 4: Flight Controller Integration
+# Feature: Vision Pose Estimation
+
+vision_pose_node:
+  ros__parameters:
+    # Publishing rate
+    publish_rate: 30.0          # Hz (EKF2 recommendation)
+    
+    # Frame IDs
+    frame_id: 'map'             # Parent frame
+    child_frame_id: 'base_link' # Child frame
+    
+    # Input sources
+    use_odom: true              # Use /odom topic
+    use_pose: false             # Use /slam/pose topic
+    
+    # Covariance values
+    position_covariance: 0.01    # m^2 (position uncertainty)
+    orientation_covariance: 0.01 # rad^2 (orientation uncertainty)

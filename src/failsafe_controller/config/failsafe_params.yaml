@@ -1,0 +1,22 @@
+# Failsafe Controller Parameters
+# Epic 4: Flight Controller Integration
+# Feature: Fail-Safe Logic
+
+failsafe_node:
+  ros__parameters:
+    # SLAM health monitoring
+    odom_timeout: 2.0              # seconds (SLAM failure threshold)
+    min_update_rate: 5.0           # Hz (minimum acceptable rate)
+    
+    # Position jump detection
+    position_jump_threshold: 5.0   # meters (sudden position change)
+    
+    # Warning system
+    warning_time: 3.0              # seconds (grace period before emergency)
+    
+    # Emergency landing
+    emergency_descent_rate: 0.5    # m/s (controlled descent)
+    landing_height: 0.3            # meters (ground detection)
+    
+    # Safety
+    auto_arm_disarm: true          # Auto-disarm on landing

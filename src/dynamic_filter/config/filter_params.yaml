@@ -1,0 +1,8 @@
+# Dynamic Object Filtering Parameters
+# Feature 1.1.8
+
+dynamic_filter_node:
+  ros__parameters:
+    history_length: 10          # Number of scans to track
+    velocity_threshold: 0.2     # m/s - objects moving faster are dynamic
+    confidence_threshold: 0.7   # 70% confidence for dynamic classification

@@ -1,0 +1,13 @@
+# Graph-Based SLAM Parameters
+# Feature 1.1.6
+
+pose_graph_node:
+  ros__parameters:
+    keyframe_distance: 0.5       # meters between keyframes
+    loop_closure_distance: 2.0   # max distance for loop closure
+    optimize_frequency: 1.0      # Hz
+
+loop_closure_node:
+  ros__parameters:
+    scan_history_size: 100       # number of scans to keep
+    loop_threshold: 0.8          # match score threshold (0-1)

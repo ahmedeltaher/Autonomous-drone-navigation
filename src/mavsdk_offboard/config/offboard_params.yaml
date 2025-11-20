@@ -1,0 +1,15 @@
+# MAVSDK Offboard Control Parameters
+# Epic 4: Flight Controller Integration
+# Feature 1.1.16: MAVSDK Offboard Mode
+
+offboard_control_node:
+  ros__parameters:
+    # Setpoint publishing rate
+    setpoint_rate: 20.0      # Hz (must be >2Hz for PX4)
+    
+    # Automatic mode switching
+    auto_arm: false          # Auto-arm when offboard enabled
+    auto_offboard: false     # Auto-enable offboard mode
+    
+    # Connection
+    connection_timeout: 5.0  # seconds

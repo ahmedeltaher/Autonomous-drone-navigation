@@ -1,0 +1,68 @@
+# IMU Processing Parameters
+# Configuration for Feature 1.1.2 - IMU Data Processing
+
+imu_processing_node:
+  ros__parameters:
+    # Update rate
+    update_rate: 100.0  # Hz - High frequency for accurate integration
+    
+    # Low-pass filter cutoff frequencies (vibration filtering)
+    # Cutoff should be below motor/propeller vibration frequencies (typically 50-200 Hz)
+    accel_lpf_cutoff: 20.0  # Hz - Accelerometer filter
+    gyro_lpf_cutoff: 20.0   # Hz - Gyroscope filter
+    
+    # Bias estimation and calibration
+    calibration_samples: 1000  # Number of samples for initial calibration
+    enable_bias_estimation: true  # Auto-calibrate on startup
+    
+    # Physical constants
+    gravity: 9.81  # m/s^2 - Local gravity (adjust for altitude if needed)
+    
+    # Sensor specifications (MPU6050 / ICM-42688-P typical values)
+    accel_range: 16.0  # g (±16g)
+    gyro_range: 2000.0  # deg/s (±2000 deg/s)
+    
+    # Noise characteristics (tune based on sensor datasheet)
+    accel_noise_density: 0.01  # m/s^2/√Hz
+    gyro_noise_density: 0.001  # rad/s/√Hz
+    
+    # Bias stability (drift over time)
+    accel_bias_stability: 0.001  # m/s^2
+    gyro_bias_stability: 0.0001  # rad/s
+
+complementary_filter_node:
+  ros__parameters:
+    # Complementary filter coefficient
+    # alpha = 0.98 means 98% gyro, 2% accelerometer
+    # Higher alpha = trust gyro more (good short-term, drifts long-term)
+    # Lower alpha = trust accel more (noisy short-term, stable long-term)
+    alpha: 0.98
+    
+    # Expected update rate
+    update_rate: 100.0  # Hz
+    
+    # Physical constants
+    gravity: 9.81  # m/s^2
+    
+    # Magnetometer support (for yaw correction)
+    use_magnetometer: false  # Set true if mag available and calibrated
+    
+    # Orientation initialization
+    initial_roll: 0.0   # radians
+    initial_pitch: 0.0  # radians  
+    initial_yaw: 0.0    # radians
+
+imu_calibration_node:
+  ros__parameters:
+    # Calibration parameters
+    samples_per_position: 1000  # Samples to collect per orientation
+    gravity: 9.81  # m/s^2
+    output_file: 'imu_calibration.yaml'  # Where to save results
+    
+    # Calibration positions (6-point calibration)
+    # 1. Level (Z+ up)
+    # 2. Upside down (Z- up)
+    # 3. Left side (Y+ up)
+    # 4. Right side (Y- up)
+    # 5. Nose up (X+ up)
+    # 6. Nose down (X- up)

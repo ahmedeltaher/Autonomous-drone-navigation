@@ -1,0 +1,16 @@
+# Waypoint Navigation Parameters
+# Feature 1.1.14: Waypoint Navigation
+
+waypoint_manager_node:
+  ros__parameters:
+    # Mission file (optional, can be set at launch)
+    mission_file: ''
+    
+    # Waypoint tolerance (meters)
+    waypoint_tolerance: 0.3
+    
+    # Auto-start mission on load
+    auto_start: false
+    
+    # Loop mission after completion
+    loop_mission: false

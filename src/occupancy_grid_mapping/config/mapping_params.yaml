@@ -1,0 +1,16 @@
+# Occupancy Grid Mapping Parameters
+# Feature 1.1.7
+
+occupancy_grid_node:
+  ros__parameters:
+    resolution: 0.05      # meters per cell (5cm)
+    width: 200            # cells (10m at 5cm resolution)
+    height: 200           # cells (10m at 5cm resolution)
+    origin_x: -5.0        # meters
+    origin_y: -5.0        # meters
+    prob_occ: 0.7         # P(occupied | hit)
+    prob_free: 0.3        # P(occupied | miss)
+
+map_merger_node:
+  ros__parameters:
+    merge_method: 'average'  # 'average', 'max', 'min'

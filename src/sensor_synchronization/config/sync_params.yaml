@@ -1,0 +1,19 @@
+# Sensor Synchronization Parameters
+# Feature 1.1.4 - Sensor Synchronization
+
+sensor_sync_node:
+  ros__parameters:
+    # Synchronization tolerance (milliseconds)
+    # Sensors within this time window are considered synchronized
+    sync_tolerance_ms: 50.0  # 50ms for multi-rate sensors
+    
+    # Queue size for message buffering
+    queue_size: 10
+    
+    # Sync mode: 'approximate' or 'exact'
+    sync_mode: 'approximate'
+
+time_calibration_node:
+  ros__parameters:
+    # Number of samples for offset estimation
+    calibration_samples: 100
